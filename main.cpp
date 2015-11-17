@@ -38,8 +38,8 @@ int main() {
 	bool isExit = true;
 	while (isExit) {
 		char key;
-		cout << "----------------------------\n" << "    Меню: \n" << "1 - Добавить новую запись\n" << "2 - Показать все записи\n" << "3 - Сортировка по зодиаку\n"
-			<< "4 - Найти по Фамилии\n" << "5 - Экспорт Базы\n" << "6 - Импорт Базы\n" << "7 - Редактировать запись\n" << "8 - Удалить запись\n" << "0 - Выход\n" << "----------------------------\n";
+		cout << "----------------------------\n" << "    РњРµРЅСЋ: \n" << "1 - Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІСѓСЋ Р·Р°РїРёСЃСЊ\n" << "2 - РџРѕРєР°Р·Р°С‚СЊ РІСЃРµ Р·Р°РїРёСЃРё\n" << "3 - РЎРѕСЂС‚РёСЂРѕРІРєР° РїРѕ Р·РѕРґРёР°РєСѓ\n"
+			<< "4 - РќР°Р№С‚Рё РїРѕ Р¤Р°РјРёР»РёРё\n" << "5 - Р­РєСЃРїРѕСЂС‚ Р‘Р°Р·С‹\n" << "6 - РРјРїРѕСЂС‚ Р‘Р°Р·С‹\n" << "7 - Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ Р·Р°РїРёСЃСЊ\n" << "8 - РЈРґР°Р»РёС‚СЊ Р·Р°РїРёСЃСЊ\n" << "0 - Р’С‹С…РѕРґ\n" << "----------------------------\n";
 		cin >> key;
 		switch (key) {
 		case '1':
@@ -79,15 +79,15 @@ int main() {
 
 void AddNew(vector<Znak> & data) {
 	Znak tmp;
-	cout << "Введите фамилию: ";
+	cout << "Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ: ";
 	cin >> tmp.secondn;
-	cout << "Введите имя: ";
+	cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ: ";
 	cin >> tmp.name;
-	cout << "Введите дату рождения через пробел: ";
+	cout << "Р’РІРµРґРёС‚Рµ РґР°С‚Сѓ СЂРѕР¶РґРµРЅРёСЏ С‡РµСЂРµР· РїСЂРѕР±РµР»: ";
 	while (true) {
 		cin >> tmp.bday[0];
 		if (!cin) {
-			cout << "Вы ввели не число, введите недостающие символы. \n";
+			cout << "Р’С‹ РІРІРµР»Рё РЅРµ С‡РёСЃР»Рѕ, РІРІРµРґРёС‚Рµ РЅРµРґРѕСЃС‚Р°СЋС‰РёРµ СЃРёРјРІРѕР»С‹. \n";
 			cin.clear();
 			while (cin.get() != '\n');
 		}
@@ -96,7 +96,7 @@ void AddNew(vector<Znak> & data) {
 	while (true) {
 		cin >> tmp.bday[1];
 		if (!cin) {
-			cout << "Вы ввели не число, введите недостающие символы. \n";
+			cout << "Р’С‹ РІРІРµР»Рё РЅРµ С‡РёСЃР»Рѕ, РІРІРµРґРёС‚Рµ РЅРµРґРѕСЃС‚Р°СЋС‰РёРµ СЃРёРјРІРѕР»С‹. \n";
 			cin.clear();
 			while (cin.get() != '\n');
 		}
@@ -105,7 +105,7 @@ void AddNew(vector<Znak> & data) {
 	while (true) {
 		cin >> tmp.bday[2];
 		if (!cin) {
-			cout << "Вы ввели не число, введите недостающие символы. \n";
+			cout << "Р’С‹ РІРІРµР»Рё РЅРµ С‡РёСЃР»Рѕ, РІРІРµРґРёС‚Рµ РЅРµРґРѕСЃС‚Р°СЋС‰РёРµ СЃРёРјРІРѕР»С‹. \n";
 			cin.clear();
 			while (cin.get() != '\n');
 		}
@@ -113,45 +113,45 @@ void AddNew(vector<Znak> & data) {
 	}
 
 	if ((tmp.bday[0] >= 21 && tmp.bday[1] == 3) || (tmp.bday[0] <= 19 && tmp.bday[1] == 4))
-		tmp.zodiac = "Овен";
+		tmp.zodiac = "РћРІРµРЅ";
 	else if ((tmp.bday[0] >= 20 && tmp.bday[1] == 4) || (tmp.bday[0] <= 20 && tmp.bday[1] == 5))
-		tmp.zodiac = "Телец";
+		tmp.zodiac = "РўРµР»РµС†";
 	else if ((tmp.bday[0] >= 21 && tmp.bday[1] == 5) || (tmp.bday[0] <= 20 && tmp.bday[1] == 6))
-		tmp.zodiac = "Близнецы";
+		tmp.zodiac = "Р‘Р»РёР·РЅРµС†С‹";
 	else if ((tmp.bday[0] >= 21 && tmp.bday[1] == 6) || (tmp.bday[0] <= 22 && tmp.bday[1] == 7))
-		tmp.zodiac = "Рак";
+		tmp.zodiac = "Р Р°Рє";
 	else if ((tmp.bday[0] >= 23 && tmp.bday[1] == 7) || (tmp.bday[0] <= 22 && tmp.bday[1] == 8))
-		tmp.zodiac = "Лев";
+		tmp.zodiac = "Р›РµРІ";
 	else if ((tmp.bday[0] >= 23 && tmp.bday[1] == 8) || (tmp.bday[0] <= 22 && tmp.bday[1] == 9))
-		tmp.zodiac = "Дева";
+		tmp.zodiac = "Р”РµРІР°";
 	else if ((tmp.bday[0] >= 23 && tmp.bday[1] == 9) || (tmp.bday[0] <= 22 && tmp.bday[1] == 10))
-		tmp.zodiac = "Весы";
+		tmp.zodiac = "Р’РµСЃС‹";
 	else if ((tmp.bday[0] >= 23 && tmp.bday[1] == 10) || (tmp.bday[0] <= 21 && tmp.bday[1] == 11))
-		tmp.zodiac = "Скорпион";
+		tmp.zodiac = "РЎРєРѕСЂРїРёРѕРЅ";
 	else if ((tmp.bday[0] >= 22 && tmp.bday[1] == 11) || (tmp.bday[0] <= 21 && tmp.bday[1] == 12))
-		tmp.zodiac = "Стрелец";
+		tmp.zodiac = "РЎС‚СЂРµР»РµС†";
 	else if ((tmp.bday[0] >= 22 && tmp.bday[1] == 12) || (tmp.bday[0] <= 19 && tmp.bday[1] == 1))
-		tmp.zodiac = "Козерог";
+		tmp.zodiac = "РљРѕР·РµСЂРѕРі";
 	else if ((tmp.bday[0] >= 20 && tmp.bday[1] == 1) || (tmp.bday[0] <= 18 && tmp.bday[1] == 2))
-		tmp.zodiac = "Водолей";
+		tmp.zodiac = "Р’РѕРґРѕР»РµР№";
 	else if ((tmp.bday[0] >= 19 && tmp.bday[1] == 2) || (tmp.bday[0] <= 20 && tmp.bday[1] == 3))
-		tmp.zodiac = "Рыба";
+		tmp.zodiac = "Р С‹Р±Р°";
 	else
-		tmp.zodiac = "Не верно заданно";
+		tmp.zodiac = "РќРµ РІРµСЂРЅРѕ Р·Р°РґР°РЅРЅРѕ";
 
 	data.push_back(tmp);
 }
 
 void ShowAll(const vector<Znak> & data) {
 	if (data.size() == 0) {
-		cout << "Данные отсутсвуют\n";
+		cout << "Р”Р°РЅРЅС‹Рµ РѕС‚СЃСѓС‚СЃРІСѓСЋС‚\n";
 	}
 	else {
 		for (size_t i = 0; i<data.size(); i++) {
-			cout << "Фамилия: " << data.at(i).secondn << "\n";
-			cout << "Имя: " << data.at(i).name << "\n";
-			cout << "Зодиак: " << data.at(i).zodiac << "\n";
-			cout << "День Рождения: " << data.at(i).bday[0] << "." << data.at(i).bday[1] << "."
+			cout << "Р¤Р°РјРёР»РёСЏ: " << data.at(i).secondn << "\n";
+			cout << "РРјСЏ: " << data.at(i).name << "\n";
+			cout << "Р—РѕРґРёР°Рє: " << data.at(i).zodiac << "\n";
+			cout << "Р”РµРЅСЊ Р РѕР¶РґРµРЅРёСЏ: " << data.at(i).bday[0] << "." << data.at(i).bday[1] << "."
 				<< data.at(i).bday[2] << "\n\n";
 		}
 	}
@@ -159,29 +159,29 @@ void ShowAll(const vector<Znak> & data) {
 }
 /*
 int GetZodiacNo(string zodiac) {
-	if (zodiac == "Овен")
+	if (zodiac == "РћРІРµРЅ")
 		return 1;
-	else if (zodiac == "Телец")
+	else if (zodiac == "РўРµР»РµС†")
 		return 2;
-	else if (zodiac == "Близнецы")
+	else if (zodiac == "Р‘Р»РёР·РЅРµС†С‹")
 		return 3;
-	else if (zodiac == "Рак")
+	else if (zodiac == "Р Р°Рє")
 		return 4;
-	else if (zodiac == "Лев")
+	else if (zodiac == "Р›РµРІ")
 		return 5;
-	else if (zodiac == "Дева")
+	else if (zodiac == "Р”РµРІР°")
 		return 6;
-	else if (zodiac == "Весы")
+	else if (zodiac == "Р’РµСЃС‹")
 		return 7;
-	else if (zodiac == "Скорпион")
+	else if (zodiac == "РЎРєРѕСЂРїРёРѕРЅ")
 		return 8;
-	else if (zodiac == "Стрелец")
+	else if (zodiac == "РЎС‚СЂРµР»РµС†")
 		return 9;
-	else if (zodiac == "Козерог")
+	else if (zodiac == "РљРѕР·РµСЂРѕРі")
 		return 10;
-	else if (zodiac == "Водолей")
+	else if (zodiac == "Р’РѕРґРѕР»РµР№")
 		return 11;
-	else if (zodiac == "Рыба")
+	else if (zodiac == "Р С‹Р±Р°")
 		return 12;
 	return 1;
 }
@@ -189,18 +189,18 @@ int GetZodiacNo(string zodiac) {
 
 int GetZodiacNo(string zodiac) {
 	static const map<string, int>table = { 
-		{ "Овен",1 },
-		{ "Телец",2 },
-		{ "Близнецы",3 },
-		{ "Рак",4 },
-		{ "Лев",5 },
-		{ "Дева",6 },
-		{ "Весы",7 },
-		{ "Скорпион",8 },
-		{ "Стрелец",9 },
-		{ "Козерог",10 },
-		{ "Водолей",11 },
-		{ "Рыба",12 } };
+		{ "РћРІРµРЅ",1 },
+		{ "РўРµР»РµС†",2 },
+		{ "Р‘Р»РёР·РЅРµС†С‹",3 },
+		{ "Р Р°Рє",4 },
+		{ "Р›РµРІ",5 },
+		{ "Р”РµРІР°",6 },
+		{ "Р’РµСЃС‹",7 },
+		{ "РЎРєРѕСЂРїРёРѕРЅ",8 },
+		{ "РЎС‚СЂРµР»РµС†",9 },
+		{ "РљРѕР·РµСЂРѕРі",10 },
+		{ "Р’РѕРґРѕР»РµР№",11 },
+		{ "Р С‹Р±Р°",12 } };
 	auto pos = table.find(zodiac);
 	return pos == table.end() ? -1 : pos->second;
 }
@@ -208,7 +208,7 @@ int GetZodiacNo(string zodiac) {
 void SortZodiac(vector<Znak> & data) {
 	Znak tmp;
 	if (data.size() == 0) {
-		cout << "Данные отсутсвуют\n";
+		cout << "Р”Р°РЅРЅС‹Рµ РѕС‚СЃСѓС‚СЃРІСѓСЋС‚\n";
 	}
 	else {
 		for (size_t i = 0; i < data.size() - 1; ++i) {
@@ -226,26 +226,26 @@ void SortZodiac(vector<Znak> & data) {
 
 void ShowDate(const vector<Znak> & data) {
 	if (data.size() == 0) {
-		cout << "Данные отсутсвуют\n";
+		cout << "Р”Р°РЅРЅС‹Рµ РѕС‚СЃСѓС‚СЃРІСѓСЋС‚\n";
 	}
 	else {
 		string sname;
 		bool isFind = false;
-		cout << "Введите фамилию: ";
+		cout << "Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ: ";
 		cin >> sname;
-		cout << "---- Результаты поиска -----\n";
+		cout << "---- Р РµР·СѓР»СЊС‚Р°С‚С‹ РїРѕРёСЃРєР° -----\n";
 		for (size_t i = 0; i<data.size(); i++) {
 			if (data.at(i).secondn == sname) {
-				cout << "Фамилия: " << data.at(i).secondn << "\n";
-				cout << "Имя: " << data.at(i).name << "\n";
-				cout << "Зодиак: " << data.at(i).zodiac << "\n";
-				cout << "День Рождения: " << data.at(i).bday[0] << "." << data.at(i).bday[1] << "."
+				cout << "Р¤Р°РјРёР»РёСЏ: " << data.at(i).secondn << "\n";
+				cout << "РРјСЏ: " << data.at(i).name << "\n";
+				cout << "Р—РѕРґРёР°Рє: " << data.at(i).zodiac << "\n";
+				cout << "Р”РµРЅСЊ Р РѕР¶РґРµРЅРёСЏ: " << data.at(i).bday[0] << "." << data.at(i).bday[1] << "."
 					<< data.at(i).bday[2] << "\n\n";
 				isFind = true;
 			}
 		}
 		if (!isFind)
-			cout << "Ничего не найдено :(\n";
+			cout << "РќРёС‡РµРіРѕ РЅРµ РЅР°Р№РґРµРЅРѕ :(\n";
 	}
 }
 
@@ -255,7 +255,7 @@ void ImpDB(vector<Znak> & data) {
 	ifstream fin("db.txt", ios_base::in | ios_base::binary);
 	if (!fin.is_open())
 	{
-		cout << "Баз данных не существует или не может быть открытой.\n";
+		cout << "Р‘Р°Р· РґР°РЅРЅС‹С… РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ РёР»Рё РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚РєСЂС‹С‚РѕР№.\n";
 	}
 	else {
 		while (true) {
@@ -264,32 +264,32 @@ void ImpDB(vector<Znak> & data) {
 			data.push_back(tmp);
 		}
 		fin.close();
-		cout << "Импорт в базу данных осуществлен!\n";
+		cout << "РРјРїРѕСЂС‚ РІ Р±Р°Р·Сѓ РґР°РЅРЅС‹С… РѕСЃСѓС‰РµСЃС‚РІР»РµРЅ!\n";
 	}
 }
 
 void ExpDB(vector<Znak> & data) {
 	if (data.size() == 0) {
-		cout << "Данные отсутсвуют\n";
+		cout << "Р”Р°РЅРЅС‹Рµ РѕС‚СЃСѓС‚СЃРІСѓСЋС‚\n";
 	}
 	else {
 		Znak tmp;
 		boolean exit = false;
 		int key;
-		cout << "Экспортирование выполнять:\n";
-		cout << "1 - Записать в конец файла\n";
-		cout << "2 - Записать с предварительной очисткой файла\n";
+		cout << "Р­РєСЃРїРѕСЂС‚РёСЂРѕРІР°РЅРёРµ РІС‹РїРѕР»РЅСЏС‚СЊ:\n";
+		cout << "1 - Р—Р°РїРёСЃР°С‚СЊ РІ РєРѕРЅРµС† С„Р°Р№Р»Р°\n";
+		cout << "2 - Р—Р°РїРёСЃР°С‚СЊ СЃ РїСЂРµРґРІР°СЂРёС‚РµР»СЊРЅРѕР№ РѕС‡РёСЃС‚РєРѕР№ С„Р°Р№Р»Р°\n";
 		cin >> key;
 
 		if (key == 1) {
 			ofstream fout("db.txt", ios_base::out | ios_base::app);
 			if (!fout.is_open()) {
-				cout << "Баз данных не существует или не может быть открытой.\n";
+				cout << "Р‘Р°Р· РґР°РЅРЅС‹С… РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ РёР»Рё РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚РєСЂС‹С‚РѕР№.\n";
 				exit = true;
 			}
 
 			else if (data.size() == 0) {
-				cout << "Данные отсутсвуют!";
+				cout << "Р”Р°РЅРЅС‹Рµ РѕС‚СЃСѓС‚СЃРІСѓСЋС‚!";
 			}
 
 			else {
@@ -301,18 +301,18 @@ void ExpDB(vector<Znak> & data) {
 					fout << data.at(i).bday[0] << " " << data.at(i).bday[1] << " " << data.at(i).bday[2] << "\n";
 				}
 				fout.close();
-				cout << "Запись успешно прошла!\n";
+				cout << "Р—Р°РїРёСЃСЊ СѓСЃРїРµС€РЅРѕ РїСЂРѕС€Р»Р°!\n";
 			}
 		}
 		else if (key == 2) {
 			ofstream fout("db.txt", ios_base::out | ios_base::trunc);
 			if (!fout.is_open()) {
-				cout << "Баз данных не существует или не может быть открытой.\n";
+				cout << "Р‘Р°Р· РґР°РЅРЅС‹С… РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ РёР»Рё РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚РєСЂС‹С‚РѕР№.\n";
 				exit = true;
 			}
 
 			else if (data.size() == 0) {
-				cout << "Данные отсутсвуют!";
+				cout << "Р”Р°РЅРЅС‹Рµ РѕС‚СЃСѓС‚СЃРІСѓСЋС‚!";
 			}
 
 			else {
@@ -324,7 +324,7 @@ void ExpDB(vector<Znak> & data) {
 					fout << data.at(i).bday[0] << " " << data.at(i).bday[1] << " " << data.at(i).bday[2] << "\n";
 				}
 				fout.close();
-				cout << "Запись успешно прошла!\n";
+				cout << "Р—Р°РїРёСЃСЊ СѓСЃРїРµС€РЅРѕ РїСЂРѕС€Р»Р°!\n";
 			}
 		}
 	}
@@ -334,97 +334,97 @@ void ExpDB(vector<Znak> & data) {
 
 void Edit(vector<Znak> & data) {
 	if (data.size() == 0) {
-		cout << "Данные отсутсвуют\n";
+		cout << "Р”Р°РЅРЅС‹Рµ РѕС‚СЃСѓС‚СЃРІСѓСЋС‚\n";
 	}
 	else {
 		string sname;
 		bool isFind = false;
-		cout << "Введите фамилию для редактирования: ";
+		cout << "Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ РґР»СЏ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ: ";
 		cin >> sname;
-		cout << "--- Редактируем значения ---\n";
+		cout << "--- Р РµРґР°РєС‚РёСЂСѓРµРј Р·РЅР°С‡РµРЅРёСЏ ---\n";
 		for (size_t i = 0; i<data.size(); i++) {
 			if (data.at(i).secondn == sname) {
-				cout << "Фамилия: " << data.at(i).secondn << "\n";
-				cout << "Имя: " << data.at(i).name << "\n";
-				cout << "Зодиак: " << data.at(i).zodiac << "\n";
-				cout << "День Рождения: " << data.at(i).bday[0] << "." << data.at(i).bday[1] << "."
+				cout << "Р¤Р°РјРёР»РёСЏ: " << data.at(i).secondn << "\n";
+				cout << "РРјСЏ: " << data.at(i).name << "\n";
+				cout << "Р—РѕРґРёР°Рє: " << data.at(i).zodiac << "\n";
+				cout << "Р”РµРЅСЊ Р РѕР¶РґРµРЅРёСЏ: " << data.at(i).bday[0] << "." << data.at(i).bday[1] << "."
 					<< data.at(i).bday[2] << "\n";
 				cout << "----------------------------\n\n";
-				cout << "Введите фамилию: ";
+				cout << "Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ: ";
 				cin >> data.at(i).secondn;
-				cout << "Введите имя: ";
+				cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ: ";
 				cin >> data.at(i).name;
-				cout << "Введите дату рождения: ";
+				cout << "Р’РІРµРґРёС‚Рµ РґР°С‚Сѓ СЂРѕР¶РґРµРЅРёСЏ: ";
 				cin >> data.at(i).bday[0] >> data.at(i).bday[1] >> data.at(i).bday[2];
-				//Проверка даты и изменение зодиака
+				//РџСЂРѕРІРµСЂРєР° РґР°С‚С‹ Рё РёР·РјРµРЅРµРЅРёРµ Р·РѕРґРёР°РєР°
 				if ((data.at(i).bday[0] >= 21 && data.at(i).bday[1] == 3) || (data.at(i).bday[0] <= 19 && data.at(i).bday[1] == 4))
-					data.at(i).zodiac = "Овен";
+					data.at(i).zodiac = "РћРІРµРЅ";
 				else if ((data.at(i).bday[0] >= 20 && data.at(i).bday[1] == 4) || (data.at(i).bday[0] <= 20 && data.at(i).bday[1] == 5))
-					data.at(i).zodiac = "Телец";
+					data.at(i).zodiac = "РўРµР»РµС†";
 				else if ((data.at(i).bday[0] >= 21 && data.at(i).bday[1] == 5) || (data.at(i).bday[0] <= 20 && data.at(i).bday[1] == 6))
-					data.at(i).zodiac = "Близнецы";
+					data.at(i).zodiac = "Р‘Р»РёР·РЅРµС†С‹";
 				else if ((data.at(i).bday[0] >= 21 && data.at(i).bday[1] == 6) || (data.at(i).bday[0] <= 22 && data.at(i).bday[1] == 7))
-					data.at(i).zodiac = "Рак";
+					data.at(i).zodiac = "Р Р°Рє";
 				else if ((data.at(i).bday[0] >= 23 && data.at(i).bday[1] == 7) || (data.at(i).bday[0] <= 22 && data.at(i).bday[1] == 8))
-					data.at(i).zodiac = "Лев";
+					data.at(i).zodiac = "Р›РµРІ";
 				else if ((data.at(i).bday[0] >= 23 && data.at(i).bday[1] == 8) || (data.at(i).bday[0] <= 22 && data.at(i).bday[1] == 9))
-					data.at(i).zodiac = "Дева";
+					data.at(i).zodiac = "Р”РµРІР°";
 				else if ((data.at(i).bday[0] >= 23 && data.at(i).bday[1] == 9) || (data.at(i).bday[0] <= 22 && data.at(i).bday[1] == 10))
-					data.at(i).zodiac = "Весы";
+					data.at(i).zodiac = "Р’РµСЃС‹";
 				else if ((data.at(i).bday[0] >= 23 && data.at(i).bday[1] == 10) || (data.at(i).bday[0] <= 21 && data.at(i).bday[1] == 11))
-					data.at(i).zodiac = "Скорпион";
+					data.at(i).zodiac = "РЎРєРѕСЂРїРёРѕРЅ";
 				else if ((data.at(i).bday[0] >= 22 && data.at(i).bday[1] == 11) || (data.at(i).bday[0] <= 21 && data.at(i).bday[1] == 12))
-					data.at(i).zodiac = "Стрелец";
+					data.at(i).zodiac = "РЎС‚СЂРµР»РµС†";
 				else if ((data.at(i).bday[0] >= 22 && data.at(i).bday[1] == 12) || (data.at(i).bday[0] <= 19 && data.at(i).bday[1] == 1))
-					data.at(i).zodiac = "Козерог";
+					data.at(i).zodiac = "РљРѕР·РµСЂРѕРі";
 				else if ((data.at(i).bday[0] >= 20 && data.at(i).bday[1] == 1) || (data.at(i).bday[0] <= 18 && data.at(i).bday[1] == 2))
-					data.at(i).zodiac = "Водолей";
+					data.at(i).zodiac = "Р’РѕРґРѕР»РµР№";
 				else if ((data.at(i).bday[0] >= 19 && data.at(i).bday[1] == 2) || (data.at(i).bday[0] <= 20 && data.at(i).bday[1] == 3))
-					data.at(i).zodiac = "Рыба";
+					data.at(i).zodiac = "Р С‹Р±Р°";
 				else
-					data.at(i).zodiac = "Не верно заданно";
+					data.at(i).zodiac = "РќРµ РІРµСЂРЅРѕ Р·Р°РґР°РЅРЅРѕ";
 
 				isFind = true;
 			}
 		}
 		if (!isFind)
-			cout << "Ничего не найдено :(\n";
+			cout << "РќРёС‡РµРіРѕ РЅРµ РЅР°Р№РґРµРЅРѕ :(\n";
 	}
 }
 
 void Remove(vector<Znak> & data) {
 	if (data.size() == 0) {
-		cout << "Данные отсутсвуют\n";
+		cout << "Р”Р°РЅРЅС‹Рµ РѕС‚СЃСѓС‚СЃРІСѓСЋС‚\n";
 	}
 	else {
 		string sname;
 		bool isFind = false;
-		cout << "Введите фамилию для удаления: ";
+		cout << "Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ: ";
 		cin >> sname;
-		cout << "----- Найдена запись -------\n";
+		cout << "----- РќР°Р№РґРµРЅР° Р·Р°РїРёСЃСЊ -------\n";
 		for (size_t i = 0; i<data.size(); i++) {
 			if (data.at(i).secondn == sname) {
-				cout << "Фамилия: " << data.at(i).secondn << "\n";
-				cout << "Имя: " << data.at(i).name << "\n";
-				cout << "Зодиак: " << data.at(i).zodiac << "\n";
-				cout << "День Рождения: " << data.at(i).bday[0] << "." << data.at(i).bday[1] << "."
+				cout << "Р¤Р°РјРёР»РёСЏ: " << data.at(i).secondn << "\n";
+				cout << "РРјСЏ: " << data.at(i).name << "\n";
+				cout << "Р—РѕРґРёР°Рє: " << data.at(i).zodiac << "\n";
+				cout << "Р”РµРЅСЊ Р РѕР¶РґРµРЅРёСЏ: " << data.at(i).bday[0] << "." << data.at(i).bday[1] << "."
 					<< data.at(i).bday[2] << "\n";
 				cout << "----------------------------\n\n";
 				int key;
-				cout << "Удалить запись?\n";
-				cout << "1 - Да\n";
-				cout << "2 - Нет\n";
+				cout << "РЈРґР°Р»РёС‚СЊ Р·Р°РїРёСЃСЊ?\n";
+				cout << "1 - Р”Р°\n";
+				cout << "2 - РќРµС‚\n";
 				cin >> key;
 
 				if (key == 1) {
 					data.erase(data.begin() + i);
-					cout << "Удаление завершено!\n";
+					cout << "РЈРґР°Р»РµРЅРёРµ Р·Р°РІРµСЂС€РµРЅРѕ!\n";
 				}
 				isFind = true;
 
 			}
 		}
 		if (!isFind)
-			cout << "Ничего не найдено :(\n";
+			cout << "РќРёС‡РµРіРѕ РЅРµ РЅР°Р№РґРµРЅРѕ :(\n";
 	}
 }
